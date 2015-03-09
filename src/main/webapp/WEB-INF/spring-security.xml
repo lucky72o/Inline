@@ -38,14 +38,4 @@
         <beans:constructor-arg name="strength" value="10" />
     </beans:bean>
 
-
-    <beans:bean id="redirectRoleStrategy" class="com.partnerconsulting.handler.RoleBasedAuthenticationSuccessHandler">
-        <beans:property name="roleUrlMap">
-            <beans:map>
-                <beans:entry key="ROLE_ADMIN" value="/account/admin/dashboard.htm"/>
-                <beans:entry key="ROLE_USER" value="/account/cabinet.htm"/>
-            </beans:map>
-        </beans:property>
-    </beans:bean>
-
 </beans:beans>
