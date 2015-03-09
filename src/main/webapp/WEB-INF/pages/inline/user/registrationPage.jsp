@@ -26,6 +26,13 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <%--<link href="res/css/bootstrap.css" rel="stylesheet" />--%>
+    <link href="res/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="res/css/style.css" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
@@ -39,7 +46,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Inline</a>
+            <a class="navbar-brand" href="main.htm">Inline</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
@@ -50,39 +57,60 @@
                     <input type="password" placeholder="Password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
-                <a type="submit" class="btn btn-primary" href="registration.htm">Sign up</a>
+                <button type="submit" class="btn btn-primary">Sign up</button>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <h1>Hello, world bbb!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-    </div>
-</div>
-
 <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    <div class="row text-center pad-top ">
+        <div class="col-md-12">
+            <h2>Registration Page</h2>
         </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+
+    <div class="row  pad-top">
+
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>   Register Yourself </strong>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <br/>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
+                            <input type="text" class="form-control" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
+                            <input type="text" class="form-control" placeholder="Desired Username" />
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" class="form-control" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                            <input type="password" class="form-control" placeholder="Enter Password" />
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                            <input type="password" class="form-control" placeholder="Retype Password" />
+                        </div>
+
+                        <a href="#" class="btn btn-success ">Register Me</a>
+                        <hr />
+                        Already Registered ?  <a href="#" >Login here</a>
+                    </form>
+                </div>
+
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+
+
     </div>
 
     <hr>
@@ -97,6 +125,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../res/scripts/bootstrap.min.js"></script>
+<script src="res/scripts/bootstrap.min.js"></script>
+<script src="res/scripts/jquery-1.10.2.js"></script>
 </body>
 </html>
