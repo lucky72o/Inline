@@ -8,28 +8,36 @@
 
     <!-- enable use-expressions -->
     <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/account/admin/**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/account/**" access="hasRole('ROLE_USER')" />
-        <intercept-url pattern="/upload/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/account/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 
         <!-- access denied page -->
         <access-denied-handler error-page="/403.htm" />
         <form-login
                 login-page="/login.htm"
-                default-target-url="/welcome.htm"
+                default-target-url="/account.htm"
                 authentication-failure-url="/login.htm?error"
-                username-parameter="username"
-                authentication-success-handler-ref="redirectRoleStrategy"
-                password-parameter="password" />
+                username-parameter="j_username"
+                password-parameter="j_password" />
         <logout logout-success-url="/login.htm?logout" />
         <!-- enable csrf protection -->
         <csrf />
     </http>
 
+    <!--<authentication-manager>-->
+        <!--<authentication-provider user-service-ref="userDetailsService" >-->
+            <!--<password-encoder ref="encoder" />-->
+            <!--<password-encoder hash="bcrypt" />-->
+        <!--</authentication-provider>-->
+    <!--</authentication-manager>-->
+
     <authentication-manager>
-        <authentication-provider user-service-ref="userDetailsService" >
-            <password-encoder ref="encoder" />
-            <password-encoder hash="bcrypt" />
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="password"
+                      authorities="ROLE_ADMIN,ROLE_USER" />
+                <user name="user" password="password" authorities="ROLE_USER" />
+            </user-service>
         </authentication-provider>
     </authentication-manager>
 
