@@ -7,7 +7,6 @@
 
 <context:component-scan base-package="org.inline"/>
     <tx:annotation-driven/>
-    <!--<import resource="spring-security.xml" />-->
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
@@ -22,18 +21,19 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver" />
-        <property name="url" value="jdbc:postgresql://127.0.0.1:5432/inline" />
-        <property name="username" value="inline" />
-        <property name="password" value="inline" />
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5432/db-inline" />
+        <property name="username" value="db-inline" />
+        <property name="password" value="password" />
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
-        <!--<property name="annotatedClasses">-->
-            <!--<list>-->
-                <!--<value>org.inline.entity.PCUser</value>-->
-            <!--</list>-->
-        <!--</property>-->
+        <property name="annotatedClasses">
+            <list>
+                <value>org.inline.entities.InlineUser</value>
+                <value>org.inline.entities.UserRole</value>
+            </list>
+        </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
