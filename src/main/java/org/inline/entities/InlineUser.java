@@ -1,15 +1,11 @@
 package org.inline.entities;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
+@Entity
+@Table(name = "users")
 public class InlineUser {
     private Integer userId;
     private String username;
@@ -45,8 +41,11 @@ public class InlineUser {
         this.token = token;
     }
 
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @SequenceGenerator(
+            name = "USER_SEQUENCE_GENERATOR",
+            sequenceName = "SEQ_USER"
+    )
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="USER_SEQUENCE_GENERATOR")
     @Column(name = "user_id",
             unique = true, nullable = false)
     public Integer getUserId() {

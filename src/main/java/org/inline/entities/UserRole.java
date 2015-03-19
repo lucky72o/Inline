@@ -2,8 +2,6 @@ package org.inline.entities;
 
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 @Entity
 @Table(name = "user_roles", catalog = "inline",
         uniqueConstraints = @UniqueConstraint(
@@ -22,8 +20,11 @@ public class UserRole{
         this.role = role;
     }
 
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @SequenceGenerator(
+            name = "USER_ROLE_SEQUENCE_GENERATOR",
+            sequenceName = "SEQ_INLINE"
+    )
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="USER_ROLE_SEQUENCE_GENERATOR")
     @Column(name = "user_role_id",
             unique = true, nullable = false)
     public Integer getUserRoleId() {
