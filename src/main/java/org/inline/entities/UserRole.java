@@ -3,9 +3,7 @@ package org.inline.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user_roles", catalog = "inline",
-        uniqueConstraints = @UniqueConstraint(
-                columnNames = { "role", "user_id" }))
+@Table(name = "user_roles")
 public class UserRole{
 
     private Integer userRoleId;
