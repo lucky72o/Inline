@@ -18,6 +18,15 @@ CACHE 1;
 ALTER TABLE seq_inline OWNER TO "db-inline";
 
 
+CREATE SEQUENCE seq_user_data
+INCREMENT BY 1
+NO MAXVALUE
+NO MINVALUE
+CACHE 1;
+
+ALTER TABLE seq_user_data OWNER TO "db-inline";
+
+
 CREATE TABLE users
 (
   user_id bigint NOT NULL DEFAULT nextval('seq_user') PRIMARY KEY,
@@ -48,6 +57,24 @@ OIDS = FALSE
 );
 
 ALTER TABLE user_roles OWNER TO "db-inline";
+
+
+CREATE TABLE user_data
+(
+  user_data_id INTEGER NOT NULL DEFAULT nextval('seq_user_data') PRIMARY KEY,
+  user_id bigint NOT NULL,
+  name CHARACTER VARYING(150) NOT NULL,
+  surname CHARACTER VARYING(150) NOT NULL,
+  phone CHARACTER VARYING(50),
+  email CHARACTER VARYING(200) NOT NULL,
+  CONSTRAINT fk_user_role_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
+  ON UPDATE CASCADE ON DELETE CASCADE
+) WITH (
+
+OIDS = FALSE
+);
+
+ALTER TABLE user_data OWNER TO "db-inline";
 
 
 
