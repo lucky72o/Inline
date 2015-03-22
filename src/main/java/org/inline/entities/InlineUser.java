@@ -13,6 +13,7 @@ public class InlineUser {
     private boolean enabled;
     private Set<UserRole> userRole = new HashSet<UserRole>(0);
     private String token;
+    private UserData userData;
 
 
     public InlineUser() {
@@ -41,11 +42,8 @@ public class InlineUser {
         this.token = token;
     }
 
-    @SequenceGenerator(
-            name = "USER_SEQUENCE_GENERATOR",
-            sequenceName = "SEQ_USER"
-    )
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="USER_SEQUENCE_GENERATOR")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id",
             unique = true, nullable = false)
     public Integer getUserId() {
@@ -92,5 +90,14 @@ public class InlineUser {
 
     public void setUserRole(Set<UserRole> userRole) {
         this.userRole = userRole;
+    }
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+    public UserData getUserData() {
+        return userData;
+    }
+
+    public void setUserData(UserData userData) {
+        this.userData = userData;
     }
 }

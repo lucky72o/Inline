@@ -20,10 +20,10 @@
     <!--  *************** DB Configuration **************** -->
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="org.postgresql.Driver" />
-        <property name="url" value="jdbc:postgresql://127.0.0.1:5432/db-inline" />
-        <property name="username" value="db-inline" />
-        <property name="password" value="password" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/inline?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8" />
+        <property name="username" value="inline" />
+        <property name="password" value="inline" />
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -32,13 +32,13 @@
             <list>
                 <value>org.inline.entities.InlineUser</value>
                 <value>org.inline.entities.UserRole</value>
+                <value>org.inline.entities.UserData</value>
             </list>
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.default_schema">public</prop>
             </props>
         </property>
     </bean>

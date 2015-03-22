@@ -18,11 +18,8 @@ public class UserRole{
         this.role = role;
     }
 
-    @SequenceGenerator(
-            name = "USER_ROLE_SEQUENCE_GENERATOR",
-            sequenceName = "SEQ_INLINE"
-    )
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="USER_ROLE_SEQUENCE_GENERATOR")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_role_id",
             unique = true, nullable = false)
     public Integer getUserRoleId() {
