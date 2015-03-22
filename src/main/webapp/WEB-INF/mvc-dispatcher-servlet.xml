@@ -49,40 +49,40 @@
 
     <!--Mail-->
 
-    <!--<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">-->
-        <!--<property name="host" value="smtp.gmail.com"/>-->
-        <!--<property name="port" value="25"/>-->
-        <!--<property name="username" value="notreply.inline@gmail.com"/>-->
-        <!--<property name="password" value="inlinePassword1"/>-->
-        <!--<property name="javaMailProperties">-->
-            <!--<props>-->
-                <!--<prop key="mail.transport.protocol">smtp</prop>-->
-                <!--<prop key="mail.mime.charset">UTF-8</prop>-->
-                <!--<prop key="mail.smtp.auth">true</prop>-->
-                <!--<prop key="mail.smtp.starttls.enable">true</prop>-->
-                <!--<prop key="mail.debug">true</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com"/>
+        <property name="port" value="25"/>
+        <property name="username" value="notreply.inline@gmail.com"/>
+        <property name="password" value="inlinePassword1"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.mime.charset">UTF-8</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
 
-    <!--<bean id="velocityEngine"-->
-          <!--class="org.springframework.ui.velocity.VelocityEngineFactoryBean">-->
-        <!--<property name="velocityProperties">-->
-            <!--<props>-->
-                <!--<prop key="resource.loader">class</prop>-->
-                <!--<prop key="class.resource.loader.class">-->
-                    <!--org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader-->
-                <!--</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="velocityEngine"
+          class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="velocityProperties">
+            <props>
+                <prop key="resource.loader">class</prop>
+                <prop key="class.resource.loader.class">
+                    org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+                </prop>
+            </props>
+        </property>
+    </bean>
 
-    <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
-        <!--<property name="defaultEncoding" value="UTF-8"/>-->
-        <!--<property name="basenames">-->
-            <!--<value>classpath:locale/messages</value>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="basenames">
+            <value>classpath:locale/messages</value>
+        </property>
+    </bean>
 
     <!--<bean id="reCaptchaService" class="net.tanesha.recaptcha.ReCaptchaImpl">-->
         <!--<property name="privateKey" value="6LeFCvwSAAAAAHJBRpdUGIKyV5bnGhUK5SW_gXLe"></property>-->
@@ -94,14 +94,14 @@
     <!--</bean>-->
 
 
-    <!--<bean id="myProperties"-->
-          <!--class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
-        <!--<property name="locations">-->
-            <!--<list>-->
-                <!--<value>classpath*:inline.properties</value>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="myProperties"
+          class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath*:inline.properties</value>
+            </list>
+        </property>
+    </bean>
 
     <!--<bean id="removeTempApplicationJob" class="com.partnerconsulting.jobs.RemoveTempApplicationJob"/>-->
 
