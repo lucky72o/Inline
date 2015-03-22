@@ -2,13 +2,14 @@ package org.inline.services.impl;
 
 import org.inline.daos.UserDao;
 import org.inline.entities.InlineUser;
+import org.inline.services.AbstractInlineService;
 import org.inline.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("userService")
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends AbstractInlineService implements UserService {
 
     @Autowired
     private UserDao userDao;

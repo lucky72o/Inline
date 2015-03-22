@@ -1,6 +1,9 @@
 package org.inline.controllers;
 
+import org.inline.exceptions.DuplicateUserException;
+import org.inline.facades.UserFacade;
 import org.inline.forms.RegistrationForm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,9 @@ import java.util.List;
  */
 @Controller
 public class LoginController {
+
+    @Autowired
+    private UserFacade userFacade;
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public String main(final Model model) {
@@ -38,15 +44,12 @@ public class LoginController {
 //            return "pc/content/registration";
 //        }
 
-        List<String> roles = new LinkedList<>();
-        roles.add("ROLE_USER");
-
         try {
-            registrationService.createNewUser(form, roles);
-        } catch (DuplicateUserException e) {
+            userFacade.createNewUser(form);
+        } catch (DuplicateUserException e) {                                                                            //TODO fix hardcoded error
             model.addAttribute("registration_message", "error_user_already_exist");
             model.addAttribute("registrationForm", form);
-            return "pc/content/registration";
+            return "inline/user/registrationPage";
         }
 
         model.addAttribute("login_message", "msd_successful_registration");

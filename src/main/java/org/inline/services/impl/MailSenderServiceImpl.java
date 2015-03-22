@@ -2,6 +2,7 @@ package org.inline.services.impl;
 
 import org.apache.velocity.app.VelocityEngine;
 import org.inline.entities.InlineUser;
+import org.inline.services.AbstractInlineService;
 import org.inline.services.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -16,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service("mailSenderService")
-public class MailSenderServiceImpl implements MailSenderService {
+public class MailSenderServiceImpl extends AbstractInlineService implements MailSenderService {
 
     @Autowired
     private JavaMailSender mailSender;

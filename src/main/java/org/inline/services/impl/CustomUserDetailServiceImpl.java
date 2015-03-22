@@ -2,6 +2,7 @@ package org.inline.services.impl;
 
 import org.inline.entities.InlineUser;
 import org.inline.entities.UserRole;
+import org.inline.services.AbstractInlineService;
 import org.inline.services.CustomUserDetailService;
 import org.inline.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service("userDetailsService")
-public class CustomUserDetailServiceImpl implements CustomUserDetailService {
+public class CustomUserDetailServiceImpl extends AbstractInlineService implements CustomUserDetailService {
 
     @Autowired
     private UserService userService;

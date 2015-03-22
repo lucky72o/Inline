@@ -3,6 +3,7 @@ package org.inline.services.impl;
 import org.inline.daos.UserDao;
 import org.inline.entities.InlineUser;
 import org.inline.exceptions.UserNotFoundException;
+import org.inline.services.AbstractInlineService;
 import org.inline.services.TokenGenerationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("tokenGenerationService")
-public class TokenGenerationServiceImpl implements TokenGenerationService {
+public class TokenGenerationServiceImpl extends AbstractInlineService implements TokenGenerationService {
 
     @Autowired
     private UserDao userDao;

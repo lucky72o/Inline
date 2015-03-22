@@ -7,6 +7,7 @@ import org.inline.entities.UserRole;
 import org.inline.exceptions.DuplicateUserException;
 import org.inline.exceptions.UserNotFoundException;
 import org.inline.forms.RegistrationForm;
+import org.inline.services.AbstractInlineService;
 import org.inline.services.MailSenderService;
 import org.inline.services.RegistrationService;
 import org.inline.services.TokenGenerationService;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service("registrationService")
-public class RegistrationServiceImpl implements RegistrationService {
+public class RegistrationServiceImpl extends AbstractInlineService implements RegistrationService {
 
     @Autowired
     private UserDao userDao;
@@ -62,13 +63,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 
             UserData userData = new UserData();
             userData.setUser(user);
-            userData.setAddress(registrationForm.getAddress());
-            userData.setCompanyName(registrationForm.getCompanyName());
-            userData.setContactPerson(registrationForm.getContactPerson());
             userData.setEmail(registrationForm.getEmail().toLowerCase());
             userData.setPhone(registrationForm.getPhone());
-            userData.setTaxation(registrationForm.getTaxation().toString());
-            userData.setNotificationOption(NotificationOptions.OPTION1.toString());
 
             user.setUserData(userData);
 
