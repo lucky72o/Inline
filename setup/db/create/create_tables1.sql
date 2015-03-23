@@ -20,9 +20,9 @@ CREATE TABLE user_roles (
 CREATE TABLE IF NOT EXISTS user_data (
     user_data_id INT(100) NOT NULL AUTO_INCREMENT,
     user_id INT(100) NOT NULL,
-    name VARCHAR(150) NOT NULL,
-    surname VARCHAR(150) NOT NULL,
-    phone VARCHAR(50) NOT NULL,
+    name VARCHAR(150),
+    surname VARCHAR(150),
+    phone VARCHAR(50),
     email VARCHAR(200) NOT NULL,
     PRIMARY KEY (user_data_id),
     UNIQUE KEY uni_user_data (user_data_id),

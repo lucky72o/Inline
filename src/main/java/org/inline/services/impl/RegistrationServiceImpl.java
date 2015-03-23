@@ -43,7 +43,7 @@ public class RegistrationServiceImpl extends AbstractInlineService implements Re
     public void createNewUser(RegistrationForm registrationForm, List<String> roles) throws DuplicateUserException {
         LOG.info("Create new user with username: " + registrationForm.getUsername());
 
-        if (checkIfUserAlreadyExist(registrationForm.getEmail().toLowerCase())) {
+        if (checkIfUserAlreadyExist(registrationForm.getUsername())) {
             throw new DuplicateUserException("User with email: " + registrationForm.getEmail() + " already exist");
         }
 

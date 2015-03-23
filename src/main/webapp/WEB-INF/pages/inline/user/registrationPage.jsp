@@ -78,33 +78,33 @@
                     <strong>   Register Yourself </strong>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form:form commandName="registrationForm" id="registrationForm" action="registration.htm" method='POST'>
                         <br/>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                            <input type="text" class="form-control" placeholder="Your Name" />
+                            <form:input path="name" class="form-control" placeholder="Your Name" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                            <input type="text" class="form-control" placeholder="Desired Username" />
+                            <form:input path="username" class="form-control" placeholder="Desired Username" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon">@</span>
-                            <input type="text" class="form-control" placeholder="Your Email" />
+                            <form:input path="email" class="form-control" placeholder="Your Email" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                            <input type="password" class="form-control" placeholder="Enter Password" />
+                            <form:password path="password" class="form-control" placeholder="Enter Password" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                            <input type="password" class="form-control" placeholder="Retype Password" />
+                            <form:password path="passwordConfirmation" class="form-control" placeholder="Retype Password" />
                         </div>
 
-                        <a href="#" class="btn btn-success ">Register Me</a>
+                        <button type="submit" class="btn btn-success ">Register Me</button>
                         <hr />
                         Already Registered ?  <a href="#" >Login here</a>
-                    </form>
+                    </form:form>
                 </div>
 
             </div>

@@ -26,6 +26,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public String main(final Model model) {
+        model.addAttribute("registrationForm", new RegistrationForm());
 		return "/inline/user/registrationPage";
 	}
 
