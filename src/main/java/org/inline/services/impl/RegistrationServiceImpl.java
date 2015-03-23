@@ -1,5 +1,6 @@
 package org.inline.services.impl;
 
+import org.apache.log4j.Logger;
 import org.inline.daos.UserDao;
 import org.inline.entities.InlineUser;
 import org.inline.entities.UserData;
@@ -23,6 +24,8 @@ import java.util.Set;
 @Service("registrationService")
 public class RegistrationServiceImpl extends AbstractInlineService implements RegistrationService {
 
+    private static final Logger LOG = Logger.getLogger(RegistrationServiceImpl.class);
+
     @Autowired
     private UserDao userDao;
 
@@ -38,6 +41,7 @@ public class RegistrationServiceImpl extends AbstractInlineService implements Re
     @Override
     @Transactional
     public void createNewUser(RegistrationForm registrationForm, List<String> roles) throws DuplicateUserException {
+        LOG.info("Create new user with username: " + registrationForm.getUsername());
 
         if (checkIfUserAlreadyExist(registrationForm.getEmail().toLowerCase())) {
             throw new DuplicateUserException("User with email: " + registrationForm.getEmail() + " already exist");
@@ -46,7 +50,7 @@ public class RegistrationServiceImpl extends AbstractInlineService implements Re
         try {
             InlineUser user = new InlineUser();
             user.setEnabled(false);
-            user.setUsername(registrationForm.getEmail().toLowerCase());
+            user.setUsername(registrationForm.getUsername());
             user.setPassword(encoder.encode(registrationForm.getPassword()));
             user.setToken(tokenGenerationService.generateToken(registrationForm.getEmail().toLowerCase(), Long.toString(System.currentTimeMillis())));
 
@@ -65,6 +69,8 @@ public class RegistrationServiceImpl extends AbstractInlineService implements Re
             userData.setUser(user);
             userData.setEmail(registrationForm.getEmail().toLowerCase());
             userData.setPhone(registrationForm.getPhone());
+            userData.setName(registrationForm.getName());
+            userData.setSurname(registrationForm.getSurname());
 
             user.setUserData(userData);
 

@@ -6,6 +6,7 @@ public class RegistrationForm {
     private String surname;
     private String phone;
     private String email;
+    private String username;
     private String password;
     private String passwordConfirmation;
 
@@ -55,5 +56,13 @@ public class RegistrationForm {
 
     public void setPasswordConfirmation(String passwordConfirmation) {
         this.passwordConfirmation = passwordConfirmation;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
