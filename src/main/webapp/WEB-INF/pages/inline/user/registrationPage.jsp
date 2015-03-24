@@ -63,6 +63,11 @@
     </div>
 </nav>
 
+<div class="alert alert-danger" style="display: none" role="alert" id="registrationPageGlobalError">
+    <strong>Registration form validation error!</strong>
+    Please fix errors below.
+</div>
+
 <div class="container">
     <div class="row text-center pad-top ">
         <div class="col-md-12">
@@ -82,26 +87,26 @@
                         <br/>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                            <form:input path="name" class="form-control" placeholder="Your Name" />
+                            <form:input path="name" id="name" class="form-control" placeholder="Your Name" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                            <form:input path="username" class="form-control" placeholder="Desired Username" />
+                            <form:input path="username" id="username" class="form-control" placeholder="Desired Username" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon">@</span>
-                            <form:input path="email" class="form-control" placeholder="Your Email" />
+                            <form:input path="email" id="email" class="form-control" placeholder="Your Email" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                            <form:password path="password" class="form-control" placeholder="Enter Password" />
+                            <form:password path="password" id="password" class="form-control" placeholder="Enter Password" />
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                            <form:password path="passwordConfirmation" class="form-control" placeholder="Retype Password" />
+                            <form:password path="passwordConfirmation" id="passwordConfirmation" class="form-control" placeholder="Retype Password" />
                         </div>
 
-                        <button type="submit" class="btn btn-success ">Register Me</button>
+                        <a href="#" id="submitRegistrationFormBtn" class="btn btn-success ">Register Me</a>
                         <hr />
                         Already Registered ?  <a href="#" >Login here</a>
                     </form:form>
@@ -127,5 +132,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="res/scripts/bootstrap.min.js"></script>
 <script src="res/scripts/jquery-1.10.2.js"></script>
+<script src="res/scripts/custom.js"></script>
 </body>
 </html>
