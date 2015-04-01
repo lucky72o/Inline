@@ -64,8 +64,6 @@
 </nav>
 
 <div class="alert alert-danger" style="display: none" role="alert" id="registrationPageGlobalError">
-    <strong>Registration form validation error!</strong>
-    Please fix errors below.
 </div>
 
 <div class="container">

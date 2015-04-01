@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $("#submitRegistrationFormBtn").click(function(e) {
+    $("#submitRegistrationFormBtn").click(function (e) {
         e.preventDefault();
         if (validateRegistrationForm()) {
             $("#registrationForm").submit();
@@ -8,17 +8,6 @@ $(document).ready(function () {
     });
 
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 // ******************   VALIDATION   ****************** //
@@ -31,15 +20,51 @@ function validateRegistrationForm() {
     var username = $("#username");
     var email = $("#email");
 
-    var fieldNotEmpty = false;
+    var validationFailed = false;
 
-    if (validateNotEmpty(email) & validateNotEmpty(password) & validateNotEmpty(passwordConfirmation) & validateNotEmpty(name) & validateNotEmpty(username)) {
-        fieldNotEmpty = true;
+    if (!(validateNotEmpty(email) & validateNotEmpty(password) & validateNotEmpty(passwordConfirmation) & validateNotEmpty(name) & validateNotEmpty(username))) {
+        validationFailed = true;
+    }
+
+
+    if (!validateAgainstPattern(email.val(), emailRegex)) {
+        validationFailed = true;
+        email.closest('div').addClass("has-error");
     } else {
-        $("#registrationPageGlobalError").show();
+        email.closest('div').removeClass("has-error");
+    }
+
+    var validPasswords = true;
+
+    if (!validateAgainstPattern(password.val(), passwordRegex)) {
+
+        validationFailed = true;
+        password.closest('div').addClass("has-error");
+        validPasswords = false;
+    } else {
+        password.closest('div').removeClass("has-error");
+    }
+
+    if (!validateAgainstPattern(passwordConfirmation.val(), passwordRegex)) {
+        validationFailed = true;
+        passwordConfirmation.closest('div').addClass("has-error");
+        validPasswords = false;
+    } else {
+        passwordConfirmation.closest('div').removeClass("has-error");
+    }
+
+    if (validPasswords) {
+        if (!validatePasswordsMatch(password, passwordConfirmation)) {
+            validationFailed = true;
+        }
+    }
+
+    if (validationFailed) {
+        $("#registrationPageGlobalError").html("<strong>Registration form validation error!</strong>Please fix errors below.").show();
         return false;
     }
 
+    $("#registrationPageGlobalError").hide();
     return true;
 }
 
@@ -56,24 +81,25 @@ function validateAgainstPattern(text, pattern) {
     return false;
 }
 
-function validatePasswordsMatch(password, passwordConfirmation) {
-
-    if (password == passwordConfirmation) {
-        return true;
-    } else {
-        var newHtml = "<h4>Не совпадают пароли!</h4>";
-        newHtml = newHtml + "<p>Пожалуйста заполните заново введённый пароль и подтверждение пароля.</p>";
-        $("#popup_message").html(newHtml);
-        $(".overlay").fadeIn(300);
-        return false;
-    }
-}
-
 function validateNotEmpty(input) {
     if (input.val() == undefined || input.val() == "") {
         input.closest('div').addClass("has-error");
         return false;
     } else {
+        input.closest('div').removeClass("has-error");
         return true;
+    }
+}
+
+function validatePasswordsMatch(password, passwordConfirmation) {
+
+    if (password.val() == passwordConfirmation.val()) {
+        password.closest('div').removeClass("has-error");
+        passwordConfirmation.closest('div').removeClass("has-error");
+        return true;
+    } else {
+        password.closest('div').addClass("has-error");
+        passwordConfirmation.closest('div').addClass("has-error");
+        return false;
     }
 }
