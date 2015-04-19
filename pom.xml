@@ -12,8 +12,8 @@
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <spring.version>4.0.5.RELEASE</spring.version>
-        <spring.security.version>3.2.3.RELEASE</spring.security.version>
+        <spring.version>4.1.6.RELEASE</spring.version>
+        <spring.security.version>4.0.0.RELEASE</spring.security.version>
         <servletapi.version>2.5</servletapi.version>
     </properties>
 
@@ -87,9 +87,9 @@
         </dependency>
 
         <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.2.2</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.1</version>
         </dependency>
 
         <!--<dependency>-->
@@ -98,16 +98,16 @@
             <!--<version>0.9.1.2</version>-->
         <!--</dependency>-->
 
-        <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>javax.persistence</groupId>-->
+            <!--<artifactId>persistence-api</artifactId>-->
+            <!--<version>1.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.1.9.Final</version>
+            <version>4.3.8.Final</version>
         </dependency>
 
         <dependency>
@@ -119,7 +119,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
 
@@ -140,8 +140,8 @@
         <!--Mail-->
         <dependency>
             <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.7</version>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.2</version>
         </dependency>
 
         <dependency>

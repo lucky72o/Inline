@@ -35,8 +35,8 @@ public class RegistrationServiceImpl extends AbstractInlineService implements Re
     @Autowired
     private TokenGenerationService tokenGenerationService;
 
-    @Autowired
-    MailSenderService mailSenderService;
+//    @Autowired
+//    MailSenderService mailSenderService;
 
     @Override
     @Transactional
