@@ -41,25 +41,13 @@
             </button>
             <a class="navbar-brand" href="#">Inline</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form:form class="navbar-form navbar-right" name='loginForm' id="loginForm" action="j_spring_security_check" method='POST'>
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control" name="j_username">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control" name="j_password">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-                <a type="submit" class="btn btn-primary" href="registration.htm">Sign up</a>
-            </form:form>
-        </div><!--/.navbar-collapse -->
     </div>
 </nav>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>You successfully logged in!</h1>
+        <h1>Welcome, ${currentUser}!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
@@ -67,23 +55,6 @@
 
 <div class="container">
     <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
 
     <hr>
 
