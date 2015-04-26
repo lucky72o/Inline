@@ -1,5 +1,6 @@
-package org.inline.config.config;
+package org.inline.config;
 
+import org.inline.config.servlet.WebMvcContextConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -11,11 +12,11 @@ public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class<?>[]{ApplicationContextConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{ ApplicationContextConfig.class };
+        return new Class<?>[]{ WebMvcContextConfig.class };
     }
 }

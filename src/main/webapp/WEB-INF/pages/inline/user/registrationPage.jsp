@@ -16,10 +16,10 @@
     <title>Inline</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="res/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="res/css/jumbotron.css" rel="stylesheet">
+    <link href="resources/css/jumbotron.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,10 +27,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <%--<link href="res/css/bootstrap.css" rel="stylesheet" />--%>
-    <link href="res/css/font-awesome.min.css" rel="stylesheet" />
+    <%--<link href="resources/css/bootstrap.css" rel="stylesheet" />--%>
+    <link href="resources/css/font-awesome.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
-    <link href="res/css/style.css" rel="stylesheet" />
+    <link href="resources/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -128,8 +128,8 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="res/scripts/bootstrap.min.js"></script>
-<script src="res/scripts/jquery-1.10.2.js"></script>
-<script src="res/scripts/custom.js"></script>
+<script src="resources/scripts/bootstrap.min.js"></script>
+<script src="resources/scripts/jquery-1.10.2.js"></script>
+<script src="resources/scripts/custom.js"></script>
 </body>
 </html>

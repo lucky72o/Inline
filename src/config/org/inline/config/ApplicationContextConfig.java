@@ -1,4 +1,4 @@
-package org.inline.config.config;
+package org.inline.config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -21,20 +21,12 @@ import java.util.Properties;
 @Configuration
 @ComponentScan("org.inline")
 @EnableTransactionManagement
-@EnableWebMvc
 @PropertySource({"classpath:dbconfig.properties"})
 public class ApplicationContextConfig {
 
     @Autowired
     private Environment env;
 
-    @Bean(name = "viewResolver")
-    public InternalResourceViewResolver getViewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/pages/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
                                                           //TODO: change datasource implementation
     @Bean(name = "dataSource")
     public DataSource getDataSource() {
